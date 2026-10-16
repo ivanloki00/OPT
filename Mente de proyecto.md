@@ -86,6 +86,8 @@
 - Las cuatro pruebas unitarias del evaluador y la compilación de los módulos modificados pasan correctamente.
 - Se creó `Borrador de informe.md` como base para documentar el problema, el enfoque, la implementación, las pruebas, las justificaciones y las limitaciones.
 - Se añadieron comentarios visuales en los tres archivos Python generados para facilitar la lectura y la defensa técnica.
+- Se ampliaron los comentarios y las cadenas de documentación de `files/milp.py` para explicar el propósito de cada operación relevante, la formulación de las restricciones y la extracción de la solución.
+- Se ampliaron también los comentarios y las cadenas de documentación de `files/schedule_evaluator.py` y `files/test_schedule_evaluator.py`, cubriendo la validación, cada componente de penalización y el propósito de cada prueba.
 - Todavía no se han generado resultados comparativos.
 
 ### Decisiones técnicas pendientes de validar

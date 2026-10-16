@@ -22,15 +22,16 @@
 ### Estado actual
 
 - **Fecha de creación de esta memoria:** 2026-10-16.
-- **Estado general:** requisitos, instancias y plantillas inspeccionados; implementación de los algoritmos todavía no iniciada.
+- **Estado general:** requisitos, instancias y plantillas inspeccionados; evaluador común, MILP-0 y MILP-1 implementados y validados.
 - **Rama de trabajo actual:** `Ivan`, creada a partir del commit inicial y publicada en GitHub.
 - **Rama estable:** `main`, reservada para avances terminados y revisados.
 - **Remoto:** `https://github.com/ivanloki00/Trabajo-OPT.git`.
 - **PDF de referencia:** `Proyecto de Asignación de Turnos.pdf` (12 páginas).
-- **Código fuente disponible:** plantillas de `milp.py`, `metaheuristic.py` y `tester.py`; los dos algoritmos contienen `TODO`/`pass` y no están implementados.
+- **Código fuente disponible:** `milp.py` contiene MILP-0 y MILP-1; `metaheuristic.py` y `tester.py` siguen pendientes de implementación.
 - **Instancias JSON disponibles:** 7 instancias en `instances/01.json` a `instances/07.json`, todas con 28 días, 5 turnos y 2 habilidades; las instancias 01-05 tienen 49 enfermeros y 06-07 tienen 50.
 - **Notebook de requisitos:** `Project_OPT_2026.ipynb`, con especificación del problema, reglas del torneo, fases del proyecto y rúbricas de Human Agency y Work Quality.
 - **Pruebas y experimentos:** el validador/evaluador común tiene 4 pruebas unitarias pasando; el MILP-1 genera horarios factibles en las 7 instancias; todavía no hay resultados comparativos.
+- **Documentación:** creado `Borrador de informe.md` con el resumen técnico, pruebas, justificaciones y trabajo pendiente.
 
 ### Progreso realizado
 

@@ -1,0 +1,2735 @@
+{
+    "number_of_days": 28,
+    "skills": [
+        "Nurse",
+        "HeadNurse"
+    ],
+    "shifts": [
+        {
+            "shift_id": "E",
+            "needed_skill": "Nurse",
+            "demand": [
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6,
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6,
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6,
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6
+            ]
+        },
+        {
+            "shift_id": "L",
+            "needed_skill": "Nurse",
+            "demand": [
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6,
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6,
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6,
+                8,
+                8,
+                8,
+                8,
+                8,
+                6,
+                6
+            ]
+        },
+        {
+            "shift_id": "D",
+            "needed_skill": "Nurse",
+            "demand": [
+                5,
+                5,
+                5,
+                5,
+                5,
+                3,
+                3,
+                5,
+                5,
+                5,
+                5,
+                5,
+                3,
+                3,
+                5,
+                5,
+                5,
+                5,
+                5,
+                3,
+                3,
+                5,
+                5,
+                5,
+                5,
+                5,
+                3,
+                3
+            ]
+        },
+        {
+            "shift_id": "N",
+            "needed_skill": "Nurse",
+            "demand": [
+                6,
+                6,
+                6,
+                6,
+                6,
+                4,
+                4,
+                6,
+                6,
+                6,
+                6,
+                6,
+                4,
+                4,
+                6,
+                6,
+                6,
+                6,
+                6,
+                4,
+                4,
+                6,
+                6,
+                6,
+                6,
+                6,
+                4,
+                4
+            ]
+        },
+        {
+            "shift_id": "DH",
+            "needed_skill": "HeadNurse",
+            "demand": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1
+            ]
+        }
+    ],
+    "nurses": [
+        {
+            "nurse_id": 0,
+            "skills": [
+                "Nurse",
+                "HeadNurse"
+            ],
+            "days_off_requests": [
+                0,
+                5,
+                7,
+                8,
+                11,
+                13,
+                16,
+                17,
+                18,
+                21
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 4,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 7,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 1,
+            "skills": [
+                "Nurse",
+                "HeadNurse"
+            ],
+            "days_off_requests": [
+                0,
+                2,
+                6,
+                7,
+                8,
+                11,
+                12,
+                14,
+                22,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 16,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 21,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 2,
+            "skills": [
+                "Nurse",
+                "HeadNurse"
+            ],
+            "days_off_requests": [
+                0,
+                9,
+                10,
+                11,
+                13,
+                16,
+                17,
+                20,
+                21,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 3,
+            "skills": [
+                "Nurse",
+                "HeadNurse"
+            ],
+            "days_off_requests": [
+                1,
+                2,
+                5,
+                8,
+                14,
+                17,
+                23,
+                24,
+                25,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 27,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 4,
+            "skills": [
+                "Nurse",
+                "HeadNurse"
+            ],
+            "days_off_requests": [
+                2,
+                3,
+                5,
+                7,
+                14,
+                17,
+                19,
+                20,
+                22,
+                24
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 3,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 21,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 5,
+            "skills": [
+                "Nurse",
+                "HeadNurse"
+            ],
+            "days_off_requests": [
+                2,
+                3,
+                5,
+                6,
+                7,
+                11,
+                13,
+                15,
+                18,
+                21
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 10,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 26,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 6,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                4,
+                7,
+                10,
+                12,
+                16,
+                22,
+                25,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 7,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                3,
+                4,
+                6,
+                9,
+                14,
+                20,
+                23,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 7,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 8,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                9,
+                10,
+                11,
+                15,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 2,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 9,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                3,
+                6,
+                7,
+                8,
+                10,
+                13,
+                14,
+                18,
+                22,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 3,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 10,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                5,
+                7,
+                9,
+                10,
+                13,
+                14,
+                15,
+                18,
+                23,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 4,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 6,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 11,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                2,
+                12,
+                14,
+                15,
+                22,
+                23,
+                25,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 12,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                6,
+                11,
+                14,
+                16,
+                18,
+                19,
+                22,
+                23,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 13,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                2,
+                3,
+                5,
+                8,
+                10,
+                11,
+                14,
+                24,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 3,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 14,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                4,
+                6,
+                8,
+                12,
+                17,
+                18,
+                19,
+                20,
+                24
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 9,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 15,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                3,
+                5,
+                7,
+                9,
+                10,
+                11,
+                12,
+                14,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 16,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                2,
+                3,
+                5,
+                7,
+                9,
+                15,
+                18,
+                19,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 8,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 12,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 13,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 17,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                6,
+                7,
+                8,
+                13,
+                17,
+                18,
+                23,
+                24,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 1,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 27,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 18,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                3,
+                13,
+                14,
+                16,
+                19,
+                20,
+                21,
+                25,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 27,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 19,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                4,
+                7,
+                12,
+                14,
+                20,
+                21,
+                23,
+                24,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 2,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 21,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 20,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                5,
+                9,
+                11,
+                12,
+                16,
+                19,
+                21,
+                23,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 2,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 21,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                1,
+                3,
+                4,
+                9,
+                12,
+                18,
+                22,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 0,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 7,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 26,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 22,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                10,
+                11,
+                12,
+                13,
+                18,
+                20,
+                21,
+                22,
+                23
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 0,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 23,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                2,
+                4,
+                7,
+                8,
+                15,
+                16,
+                18,
+                24,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 9,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 24,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                10,
+                13,
+                15,
+                19,
+                23
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 0,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 1,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 25,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                4,
+                6,
+                8,
+                9,
+                11,
+                13,
+                20,
+                22,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 18,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 21,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 26,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                3,
+                5,
+                8,
+                10,
+                11,
+                20,
+                21,
+                25,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 0,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 1,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 7,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 18,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 27,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                3,
+                7,
+                8,
+                10,
+                11,
+                18,
+                21,
+                25,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 7,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 7,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 26,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 28,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                1,
+                3,
+                5,
+                6,
+                7,
+                8,
+                13,
+                17,
+                24
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 13,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 13,
+            "min_assignments": 5,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 8,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 29,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                4,
+                10,
+                11,
+                12,
+                22,
+                23,
+                24,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 2,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 30,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                6,
+                7,
+                9,
+                18,
+                19,
+                20,
+                22,
+                23,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 5,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 8,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 31,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                8,
+                10,
+                16,
+                18,
+                21,
+                22,
+                23,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 0,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 2,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 32,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                3,
+                6,
+                7,
+                9,
+                12,
+                14,
+                17,
+                23,
+                25,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 33,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                3,
+                5,
+                8,
+                9,
+                15,
+                21,
+                22,
+                23,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 7,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 34,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                3,
+                9,
+                10,
+                12,
+                16,
+                17,
+                19,
+                23,
+                24
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 5,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 8,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 35,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                2,
+                7,
+                9,
+                10,
+                13,
+                15,
+                17,
+                20,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 4,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 7,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 8,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 26,
+                    "shift_type": "L"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 36,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                3,
+                11,
+                12,
+                14,
+                15,
+                19,
+                21,
+                22,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 7,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 9,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 18,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 12,
+            "min_assignments": 7,
+            "min_consecutive_days": 1,
+            "max_consecutive_days": 5,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 37,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                15,
+                18,
+                19,
+                20,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 8,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 8,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 20,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 38,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                1,
+                4,
+                10,
+                14,
+                16,
+                18,
+                23,
+                24,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 24,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 27,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 39,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                1,
+                7,
+                8,
+                9,
+                14,
+                17,
+                18,
+                21,
+                23,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 2,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 11,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 40,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                5,
+                9,
+                10,
+                12,
+                14,
+                21,
+                22,
+                24,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 0,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 0,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 3,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 41,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                3,
+                5,
+                12,
+                16,
+                18,
+                21,
+                22,
+                25,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 12,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 17,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 42,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                7,
+                9,
+                10,
+                11,
+                15,
+                16,
+                22,
+                26,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 2,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 18,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 43,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                5,
+                6,
+                9,
+                10,
+                12,
+                13,
+                19,
+                20,
+                21,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 10,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 18,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 21,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 44,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                2,
+                6,
+                9,
+                14,
+                16,
+                21,
+                22,
+                25,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 1,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 6,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 8,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 14,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 22,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 45,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                2,
+                4,
+                6,
+                13,
+                14,
+                15,
+                17,
+                18,
+                24,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 10,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 12,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 18,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 26,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 27,
+                    "shift_type": "DH"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 46,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                1,
+                4,
+                8,
+                10,
+                11,
+                15,
+                16,
+                18,
+                26
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 9,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 15,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 16,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 25,
+                    "shift_type": "E"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 47,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                0,
+                2,
+                6,
+                9,
+                10,
+                11,
+                12,
+                14,
+                17,
+                25
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 3,
+                    "shift_type": "DH"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 12,
+                    "shift_type": "L"
+                },
+                {
+                    "day": 12,
+                    "shift_type": "N"
+                },
+                {
+                    "day": 21,
+                    "shift_type": "D"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        },
+        {
+            "nurse_id": 48,
+            "skills": [
+                "Nurse"
+            ],
+            "days_off_requests": [
+                3,
+                11,
+                12,
+                15,
+                20,
+                21,
+                22,
+                24,
+                25,
+                27
+            ],
+            "shift_off_requests": [
+                {
+                    "day": 0,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 2,
+                    "shift_type": "E"
+                },
+                {
+                    "day": 5,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 19,
+                    "shift_type": "D"
+                },
+                {
+                    "day": 23,
+                    "shift_type": "N"
+                }
+            ],
+            "max_assignments": 6,
+            "min_assignments": 4,
+            "min_consecutive_days": 2,
+            "max_consecutive_days": 2,
+            "max_consecutive_free_days": 7,
+            "min_consecutive_free_days": 1,
+            "complete_weekends": true,
+            "same_shift_weekend": true,
+            "unwanted_patterns": [
+                "L-D",
+                "D-E-D"
+            ]
+        }
+    ]
+}

@@ -23,13 +23,14 @@
 
 - **Fecha de creación de esta memoria:** 2026-10-16.
 - **Estado general:** requisitos, instancias y plantillas inspeccionados; implementación de los algoritmos todavía no iniciada.
-- **Repositorio:** repositorio Git local inicializado en la rama `main`.
+- **Rama de trabajo actual:** `Ivan`, creada a partir del commit inicial y publicada en GitHub.
+- **Rama estable:** `main`, reservada para avances terminados y revisados.
 - **Remoto:** `https://github.com/ivanloki00/Trabajo-OPT.git`.
 - **PDF de referencia:** `Proyecto de Asignación de Turnos.pdf` (12 páginas).
 - **Código fuente disponible:** plantillas de `milp.py`, `metaheuristic.py` y `tester.py`; los dos algoritmos contienen `TODO`/`pass` y no están implementados.
 - **Instancias JSON disponibles:** 7 instancias en `instances/01.json` a `instances/07.json`, todas con 28 días, 5 turnos y 2 habilidades; las instancias 01-05 tienen 49 enfermeros y 06-07 tienen 50.
 - **Notebook de requisitos:** `Project_OPT_2026.ipynb`, con especificación del problema, reglas del torneo, fases del proyecto y rúbricas de Human Agency y Work Quality.
-- **Pruebas y experimentos:** solo se ha comprobado la sintaxis de los tres módulos Python; no hay todavía pruebas funcionales, validación de soluciones ni resultados experimentales.
+- **Pruebas y experimentos:** el validador/evaluador común tiene 4 pruebas unitarias pasando; el MILP-1 genera horarios factibles en las 7 instancias; todavía no hay resultados comparativos.
 
 ### Progreso realizado
 
@@ -40,13 +41,16 @@
 - [x] Inicializar Git y configurar el remoto de GitHub.
 - [x] Incorporar las instancias JSON y el código plantilla del proyecto.
 - [x] Revisar el notebook con la especificación y la rúbrica de *Work Quality*.
-- [ ] Definir el formato de solución externa (`lista de listas`, una cadena de turno u `"OFF"` por enfermero y día).
-- [ ] Implementar un validador independiente de dimensiones, habilidades, cobertura mínima y unicidad diaria.
-- [ ] Implementar y probar el evaluador de las nueve componentes de la función objetivo.
-- [ ] Diseñar y documentar la formulación MILP: variables, restricciones duras, desviaciones blandas y objetivo.
-- [ ] Implementar y documentar `milp.py` sin romper las cabeceras obligatorias.
-- [ ] Diseñar la representación, inicialización factible, reparación y operadores de la metaheurística.
-- [ ] Implementar y documentar `metaheuristic.py` sin romper las cabeceras obligatorias.
+- [x] Analizar las prácticas del curso y comprobar la viabilidad del enfoque con los conocimientos disponibles.
+- [x] Decidir una estrategia incremental priorizando técnicas explicables del curso.
+- [x] Definir el formato de solución externa (`lista de listas`, una cadena de turno u `"OFF"` por enfermero y día).
+- [x] Implementar un validador independiente de dimensiones, habilidades, cobertura mínima y unicidad diaria.
+- [x] Implementar y probar el evaluador de las nueve componentes de la función objetivo.
+- [x] Diseñar y documentar la formulación MILP-0 basada en OR-Tools: variables binarias podadas por habilidad, cobertura cualificada y unicidad diaria.
+- [ ] Completar `milp.py` con rachas, fines de semana, patrones y peticiones, manteniendo las cabeceras obligatorias.
+- [ ] Diseñar la representación, inicialización factible, reparación y operadores de una búsqueda local sencilla.
+- [ ] Implementar y documentar `metaheuristic.py` con la solución inicial y búsqueda local.
+- [ ] Evaluar experimentalmente si es necesario ampliar la búsqueda local a VNS; ALNS queda como ampliación opcional.
 - [ ] Crear `experiments_metaheuristic.py` con configuraciones, semillas, repeticiones y poblaciones iniciales emparejadas.
 - [ ] Crear `experiments_milp.py` con comparación de formulaciones, solvers y parámetros.
 - [ ] Asegurar el límite de 120 segundos incluyendo lectura, precomputación, inicialización y búsqueda.
@@ -68,11 +72,26 @@
 - Se incorporaron 7 instancias JSON, las plantillas `milp.py`, `metaheuristic.py` y `tester.py`, y el notebook `Project_OPT_2026.ipynb`.
 - Se comprobó que las plantillas compilan sintácticamente, pero sus métodos principales siguen sin implementar.
 - Se revisaron en el notebook los requisitos de *Work Quality*: implementación funcional y documentada, diseño detallado, experimentos replicables, análisis estadístico, resultados explicados y conclusiones.
-- No se ha modificado todavía ningún algoritmo ni se han generado resultados experimentales.
+- Se analizaron las prácticas del curso: Laboratorio 1 cubre OR-Tools, variables, restricciones, objetivos y resolución; Laboratorio 2 cubre tiempos, parámetros y comparación experimental; el Laboratorio 3 cubre la construcción automatizada de modelos MILP.
+- Se decidió priorizar una solución basada en los contenidos del curso para maximizar comprensión, capacidad de defensa y fiabilidad.
+- Se implementó `files/schedule_evaluator.py`, que separa las dos restricciones duras de las nueve penalizaciones blandas y devuelve el desglose del objetivo.
+- Se añadieron cuatro pruebas unitarias en `files/test_schedule_evaluator.py` para horarios ideales, habilidades/cobertura, penalizaciones y dimensiones inválidas.
+- Se validó el evaluador contra `instances/01.json` usando un horario completamente libre: se detectó correctamente como infactible y devolvió 140 violaciones.
+- Se implementó el MILP-0 en `files/milp.py` con lectura JSON, variables binarias podadas por habilidad, cobertura mínima, unicidad diaria y extracción en formato de torneo.
+- El MILP-0 fue validado como factible y sin violaciones duras en `instances/01.json`, `instances/06.json` e `instances/07.json`; obtuvo objetivos informativos de 3931, 3362 y 3552 usando el evaluador común.
+- Se amplió `files/milp.py` a MILP-1 con variables de desviación absoluta de demanda y desviaciones bajo/sobre el rango de asignaciones.
+- El objetivo oficial del solver coincide con `demand + assignments` del evaluador común en las siete instancias: 150, 160, 195, 230, 211, 0 y 27.
+- Las siete soluciones MILP-1 son factibles y no tienen violaciones duras.
+- Las cuatro pruebas unitarias del evaluador y la compilación de los módulos modificados pasan correctamente.
+- Se creó `Borrador de informe.md` como base para documentar el problema, el enfoque, la implementación, las pruebas, las justificaciones y las limitaciones.
+- Se añadieron comentarios visuales en los tres archivos Python generados para facilitar la lectura y la defensa técnica.
+- Todavía no se han generado resultados comparativos.
 
 ### Decisiones técnicas pendientes de validar
 
-- Elegir y justificar la formulación MILP compacta frente a generación de columnas.
+- Utilizar como enfoque base un MILP compacto con OR-Tools y construcción automatizada mediante diccionarios y bucles indexados; el MILP-1 ya está implementado.
+- Priorizar primero una búsqueda local sencilla y especializada; VNS solo se añadirá si los resultados justifican su coste y el equipo domina la versión anterior.
+- Mantener ALNS, Branch-and-Price y CP-SAT como posibles extensiones o líneas futuras, no como requisitos de la primera implementación.
 - Confirmar los solvers disponibles entre SCIP, CBC y HiGHS.
 - Determinar los hiperparámetros óptimos de la metaheurística mediante experimentos reproducibles.
 - Confirmar el formato exacto de las instancias JSON y de la interfaz del torneo cuando se incorpore el código plantilla.
@@ -85,14 +104,28 @@
 
 ### Próxima tarea recomendada
 
-Implementar primero el validador independiente y el evaluador de la función objetivo, comprobándolos con casos pequeños y soluciones construidas manualmente. No comenzar la optimización de hiperparámetros hasta que ambos componentes sean verificables y compartidos por MILP, metaheurística y experimentos.
+Completar el MILP-2 incorporando progresivamente rachas de trabajo y descanso, y después fines de semana, patrones y peticiones. Cada familia debe validarse contra el evaluador antes de añadir la siguiente.
+
+### Enfoque de implementación adoptado
+
+El proyecto seguirá una estrategia incremental alineada con los laboratorios:
+
+1. **Base común:** lectura de JSON, formato de solución, validador y evaluador.
+2. **MILP-0:** modelo de factibilidad con variables binarias, poda por habilidades, cobertura cualificada y unicidad diaria.
+3. **MILP-1:** demanda preferida, asignaciones y primeras desviaciones blandas.
+4. **MILP-2:** ampliación progresiva con rachas, fines de semana, patrones y peticiones.
+5. **Metaheurística inicial:** solución factible y búsqueda local con movimientos simples de cambio e intercambio.
+6. **Evaluación:** comparación reproducible con baselines y medición del tiempo de ejecución.
+7. **Ampliación opcional:** VNS si la búsqueda local necesita más capacidad; ALNS solo si existe tiempo, evidencia experimental y comprensión suficiente.
+
+La decisión central es no introducir desde el principio varias técnicas avanzadas. Una implementación más sencilla, correcta y defendible tiene prioridad sobre una arquitectura más sofisticada que el equipo no pueda explicar línea por línea.
 
 ### Requisitos de Work Quality incorporados a la ejecución
 
 La rúbrica del notebook evalúa el proyecto completo, no solo que el código se ejecute:
 
 - **Estilo, organización y claridad:** informe coherente, sin secciones ausentes y con uso adecuado de figuras, tablas y referencias.
-- **Diseño e implementación:** metaheurística y MILP funcionales, con diseño propio, descripción detallada y código documentado.
+- **Diseño e implementación:** metaheurística y MILP funcionales, con diseño propio, descripción detallada y código documentado. Se prioriza una solución sólida y explicable frente a una técnica más avanzada difícil de auditar.
 - **Torneos:** superar los baselines y medir el rendimiento frente a ellos; el objetivo de máxima calidad es alcanzar Q1.
 - **Experimentos:** código funcional, resultados explicados en el informe y metodología de análisis correcta.
 - **Reproducibilidad:** límite de 120 segundos por ejecución; varias repeticiones por configuración; mismas poblaciones iniciales al comparar configuraciones; código ejecutable y replicable; resultados adjuntos.

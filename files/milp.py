@@ -1,6 +1,11 @@
 from ortools.linear_solver import pywraplp
+import json
 import time
 
+
+# ============================================================================
+# MILP: modelo incremental de factibilidad y primeras penalizaciones blandas
+# ============================================================================
 class MILP:
     """
     In this class you should implement your MILP model proposal. The code that you submit for the tournament should be 
@@ -20,7 +25,21 @@ class MILP:
         Args:
             problem_path: Text file that contains information about a problem instance
         """
-        pass
+        # --- Cargar datos sin construir ni resolver el modelo todavía. ---
+        with open(problem_path, encoding="utf-8") as instance_file:
+            instance = json.load(instance_file)
+
+        if not isinstance(instance, dict):
+            raise ValueError("The problem instance must contain a JSON object")
+        self.instance = instance
+        self.number_of_days = instance["number_of_days"]
+        self.shifts = instance["shifts"]
+        self.nurses = instance["nurses"]
+        self.shift_by_id = {shift["shift_id"]: shift for shift in self.shifts}
+        self.variables = {}
+        self.demand_deviations = {}
+        self.assignment_under = {}
+        self.assignment_over = {}
         
 
     def get_best_solution(self):
@@ -31,8 +50,10 @@ class MILP:
         If you follow this template, self.best_solution should contain the best solution found so far and you should return that solution encoded in the specified format.
         If the returned solution does not follow the format specified in the project specification, you will be disqualified from the tournament.
         """
-        #TODO
-        pass
+        # --- Copiar la solución para evitar exponer el estado interno. ---
+        if self.best_solution is None:
+            return []
+        return [row[:] for row in self.best_solution]
 
 
     def run(self):
@@ -41,16 +62,168 @@ class MILP:
         and the main search procedure.
         TODO: You should implement from the pass statement.
         """
+        # --- Flujo obligatorio: leer, construir, limitar, resolver y extraer. ---
         self.read_problem_instance(self.problem_path) #You should keep this line. Otherwise, disqualified from the tournament
         solver = pywraplp.Solver.CreateSolver(self.solver_type)
+        if solver is None:
+            raise RuntimeError(f"Unable to create solver {self.solver_type!r}")
         t1 = time.time()
-        #TODO: Build your model here using the solver object. You can use the attributes of the MILP class to access the data read from the problem instance.
+        self._create_decision_variables(solver)
+        self._add_uniqueness_constraints(solver)
+        self._add_coverage_constraints(solver)
+        self._add_demand_deviation_variables(solver)
+        self._add_assignment_deviation_variables(solver)
+        self._set_objective(solver)
         t2 = time.time()
-        remaining_time = int(self.time_deadline - (t2 - t1))
-        solver.SetTimeLimit(remaining_time * 1000)  # Set time limit in milliseconds
+        remaining_time = max(1, int(self.time_deadline - (t2 - t1)))
+        solver.SetTimeLimit(remaining_time * 1000)
         result_type = solver.Solve()
-        #TODO: Extract the best solution found and store it in self.best_solution. You can use the solver object to access the solution values. Please, remember to use the specified format
-        pass
+        if result_type not in (
+            pywraplp.Solver.OPTIMAL,
+            pywraplp.Solver.FEASIBLE,
+        ):
+            self.best_solution = None
+            return
+        self.objective_value = solver.Objective().Value()
+        self.best_solution = self._extract_solution()
+
+    def _create_decision_variables(self, solver):
+        # --- Poda por habilidad: solo se crean asignaciones permitidas. ---
+        for nurse_index, nurse in enumerate(self.nurses):
+            nurse_skills = set(nurse["skills"])
+            for day in range(self.number_of_days):
+                for shift in self.shifts:
+                    shift_id = shift["shift_id"]
+                    if shift["needed_skill"] not in nurse_skills:
+                        continue
+                    key = (nurse_index, day, shift_id)
+                    self.variables[key] = solver.BoolVar(
+                        f"work_{nurse_index}_{day}_{shift_id}"
+                    )
+
+    def _add_uniqueness_constraints(self, solver):
+        # --- Restricción dura: como máximo un turno por enfermero y día. ---
+        for nurse_index in range(len(self.nurses)):
+            for day in range(self.number_of_days):
+                constraint = solver.Constraint(0, 1)
+                for shift in self.shifts:
+                    variable = self.variables.get(
+                        (nurse_index, day, shift["shift_id"])
+                    )
+                    if variable is not None:
+                        constraint.SetCoefficient(variable, 1)
+
+    def _add_coverage_constraints(self, solver):
+        # --- Restricción dura: cada turno debe tener cobertura cualificada. ---
+        for day in range(self.number_of_days):
+            for shift in self.shifts:
+                constraint = solver.Constraint(1, solver.infinity())
+                shift_id = shift["shift_id"]
+                required_skill = shift["needed_skill"]
+                for nurse_index, nurse in enumerate(self.nurses):
+                    if required_skill not in set(nurse["skills"]):
+                        continue
+                    variable = self.variables[(nurse_index, day, shift_id)]
+                    constraint.SetCoefficient(variable, 1)
+
+    def _add_demand_deviation_variables(self, solver):
+        # --- Desviación absoluta respecto a la demanda preferida. ---
+        for day in range(self.number_of_days):
+            for shift in self.shifts:
+                shift_id = shift["shift_id"]
+                preferred = shift["demand"][day]
+                deviation = solver.IntVar(
+                    0,
+                    solver.infinity(),
+                    f"demand_deviation_{day}_{shift_id}",
+                )
+                self.demand_deviations[(day, shift_id)] = deviation
+                constraint = solver.Constraint(-solver.infinity(), preferred)
+                constraint.SetCoefficient(deviation, -1)
+                for nurse_index, nurse in enumerate(self.nurses):
+                    if shift["needed_skill"] not in set(nurse["skills"]):
+                        continue
+                    variable = self.variables[(nurse_index, day, shift_id)]
+                    constraint.SetCoefficient(variable, 1)
+
+                constraint = solver.Constraint(-solver.infinity(), -preferred)
+                constraint.SetCoefficient(deviation, -1)
+                for nurse_index, nurse in enumerate(self.nurses):
+                    if shift["needed_skill"] not in set(nurse["skills"]):
+                        continue
+                    variable = self.variables[(nurse_index, day, shift_id)]
+                    constraint.SetCoefficient(variable, -1)
+
+    def _add_assignment_deviation_variables(self, solver):
+        # --- Desviaciones por debajo y por encima del rango contractual. ---
+        for nurse_index, nurse in enumerate(self.nurses):
+            under = solver.IntVar(
+                0,
+                solver.infinity(),
+                f"assignment_under_{nurse_index}",
+            )
+            over = solver.IntVar(
+                0,
+                solver.infinity(),
+                f"assignment_over_{nurse_index}",
+            )
+            self.assignment_under[nurse_index] = under
+            self.assignment_over[nurse_index] = over
+
+            constraint = solver.Constraint(
+                nurse["min_assignments"],
+                solver.infinity(),
+            )
+            constraint.SetCoefficient(under, 1)
+            for day in range(self.number_of_days):
+                for shift in self.shifts:
+                    variable = self.variables.get(
+                        (nurse_index, day, shift["shift_id"])
+                    )
+                    if variable is not None:
+                        constraint.SetCoefficient(variable, 1)
+
+            constraint = solver.Constraint(
+                -solver.infinity(),
+                nurse["max_assignments"],
+            )
+            constraint.SetCoefficient(over, -1)
+            for day in range(self.number_of_days):
+                for shift in self.shifts:
+                    variable = self.variables.get(
+                        (nurse_index, day, shift["shift_id"])
+                    )
+                    if variable is not None:
+                        constraint.SetCoefficient(variable, 1)
+
+    def _set_objective(self, solver):
+        # --- MILP-1 minimiza las dos familias blandas implementadas. ---
+        objective = solver.Objective()
+        objective.SetMinimization()
+        for deviation in self.demand_deviations.values():
+            objective.SetCoefficient(deviation, 1)
+        for deviation in self.assignment_under.values():
+            objective.SetCoefficient(deviation, 1)
+        for deviation in self.assignment_over.values():
+            objective.SetCoefficient(deviation, 1)
+
+    def _extract_solution(self):
+        # --- Convertir variables binarias al formato externo del torneo. ---
+        solution = []
+        for nurse_index in range(len(self.nurses)):
+            nurse_schedule = []
+            for day in range(self.number_of_days):
+                assigned_shift = "OFF"
+                for shift in self.shifts:
+                    variable = self.variables.get(
+                        (nurse_index, day, shift["shift_id"])
+                    )
+                    if variable is not None and variable.solution_value() > 0.5:
+                        assigned_shift = shift["shift_id"]
+                        break
+                nurse_schedule.append(assigned_shift)
+            solution.append(nurse_schedule)
+        return solution
 
     def __init__(self,time_deadline,problem_path, solver_type='SCIP', **kwargs):
         """
@@ -66,9 +239,9 @@ class MILP:
         self.best_solution = None #This attribute is meant to hold, at any time, the best solution found by the algorithm so far. Hence, you should update it accordingly. The solution enconding does not matter.
         self.time_deadline = time_deadline # Computation limit (in seconds) for the metaheuristic 
         self.solver_type = solver_type # Type of solver to use (default is 'SCIP')
+        self.objective_value = None
 
 
 
 
     
-

@@ -6,7 +6,7 @@ Example of how to call this file from the terminal:
 python tester.py -d 180 -i 01.json
 
 OR
-
+ 
 python tester.py --deadline 180 --instance 01.json
 """
 
